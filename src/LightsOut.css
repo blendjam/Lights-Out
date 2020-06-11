@@ -1,0 +1,80 @@
+:root {
+  --dark: #8f120d;
+  --darkYellow: #967a14;
+  --darkBlue:#176b92;
+  --darkBlueSecond:#0e307a;
+}
+@font-face {
+  font-family: neon;
+  src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/neon.ttf);
+}
+
+.LightBox {
+  height: 100px;
+  width: 100px;
+  background-color: rgb(43, 50, 71);
+  border: 10px solid lightblue;
+}
+.LightBox:hover {
+  cursor: pointer;
+}
+.ON {
+  background-color: royalblue;
+  box-shadow: 0 0 0.5vw #ffffff, 0 0 3vw rgb(18, 76, 252);
+  z-index: 1;
+}
+
+.LightsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, auto));
+  width: 500px;
+  height: 500px;
+  box-shadow: 0 0 0.5vw #ffffff, 0 0 3vw rgb(18, 127, 252);
+}
+h2 {
+  font-family: neon;
+  color: #ecbf1c;
+  font-size: 5rem;
+  font-weight: 100;
+  animation: glow-blue 1s ease infinite;
+}
+.out {
+  font-size: 3rem;
+}
+h1 {
+  margin: 10px auto;
+  font-family: neon;
+  color: #ecbf1c;
+  font-size: 8rem;
+  font-weight: 100;
+  animation: glow 1s ease infinite;
+}
+h1::selection {
+  background-color: #ecbf1c21;
+  border-radius: 10px;
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    text-shadow: 0 0 1vw #fa1c16, 0 0 3vw #fa1c16, 0 0 10vw #fa1c16,
+      0 0 10vw #fa1c16, 1px 1px 1px #ecbf1c;
+  }
+  50% {
+    text-shadow: 0 0 1vw var(--dark), 0 0 3vw var(--dark), 0 0 10vw var(--dark),
+      0 0 10vw var(--dark), 1px 1px 5px var(--darkYellow);
+  }
+}
+
+@keyframes glow-blue {
+  0%,
+  100% {
+    text-shadow: 0 0 1vw #16b2fa, 0 0 3vw #16b2fa, 0 0 10vw #16b2fa,
+      0 0 10vw #16b2fa, 0.5vw 0.5vw 0.5vw #165efa;
+      color:white;
+  }
+  50% {
+    text-shadow: 0 0 1vw var(--darkBlue), 0 0 3vw var(--darkBlue), 0 0 10vw var(--darkBlue),
+      0 0 10vw var(--darkBlue), 0.5vw 0.5vw 0.5vw var(--darkBlueSecond);
+  }
+}
